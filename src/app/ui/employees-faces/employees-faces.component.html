@@ -1,0 +1,11 @@
+
+<ul *ngIf="data$ | async as data; else empty"
+style="display: flex; padding: 0">
+  <li *ngFor="let employee of data"
+  style="list-style: none ">
+    <img [src]="employee.image"
+         style="width: 100px; height: 100px; margin: 10px">
+    <div style="margin: 10px ">{{employee.name}}</div></li>
+</ul>
+
+<ng-template #empty> There is no data </ng-template>
