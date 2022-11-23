@@ -1,0 +1,31 @@
+<!--<Table>-->
+<!--  <thead> Projects list </thead>-->
+<!--  <tbody>-->
+<!--  <tr *ngIf="projectsData$ | async as projectsData; else empty">-->
+<!--    <td *ngFor="let project of projectsData">-->
+<!--      {{ project.id }}-->
+<!--    </td>-->
+<!--&lt;!&ndash;    <td *ngFor="let project of projectsData">&ndash;&gt;-->
+<!--&lt;!&ndash;   {{ project.name }}&ndash;&gt;-->
+<!--&lt;!&ndash;    </td>&ndash;&gt;-->
+<!--  </tr>-->
+<!--&lt;!&ndash;  <tr *ngIf="projectsData$ | async as projectsData; else empty">&ndash;&gt;-->
+<!--&lt;!&ndash;    <td *ngFor="let project of projectsData">&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </td>&ndash;&gt;-->
+<!--&lt;!&ndash;  </tr>&ndash;&gt;-->
+<!--  </tbody>-->
+<ul *ngIf="projectsData$ | async as projectsData; else empty"
+style="padding: 0">
+  <li *ngFor="let project of projectsData"
+      style="list-style: none; margin: 10px">
+    <div>{{ project.id }}
+      <strong> Name: </strong>{{ project.name }}
+      <strong> Owner: </strong> {{ project.owner }} </div>
+    <div style="border-bottom: 1px solid gray; margin-left: 10px"> <strong>  Description:  </strong> {{ project.description }} </div>
+  </li>
+
+</ul>
+<!--</Table>-->
+
+<ng-template #empty> There is no data </ng-template>
